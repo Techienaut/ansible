@@ -10,7 +10,7 @@ These are Ansible scripts used for vm orchestration and configuration management
 
 # vm_create_windows2016.yml
 
-This script creates a Windows Server 2016 VM in Azure and configures winrm to be "ansible friendly", meaning a certificate will be created and **winrm-https** will be open. Along Windows Server, other necessary resources--such as a resource group--will be created. This is **idempotent code**, which means it will not re-create a resource or vm if it already exists. So you can add this to an already existing resource group.
+This script creates a template for Windows Server 2016 VM in Azure and configures winrm to be "ansible friendly", meaning a certificate will be created and **winrm-https** will be open. Along Windows Server, other necessary resources--such as a resource group--will be created. This is **idempotent code**, which means it will not re-create a resource or vm if it already exists. So you can add this to an already existing resource group.
 
 ### Instructions
 
