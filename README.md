@@ -4,7 +4,7 @@ Sadly, many IT organizations aren't aware of **Ansible**, or other configuration
 
 All project below use **Infrastructure as Code**, using Ansible as idempotent code.
 
-- [/01_vm_create_windows2016](https://github.com/techienaut/ansible/01_vm_create_windows2016)
+- [/01_vm_create_windows2016](https://github.com/techienaut/ansible/tree/master/01_vm_create_windows2016)
   - Creating a windows VM in Azure, that Ansible can administrate.
-- [/02_cisco_ios](https://github.com/techienaut/ansible/02_cisco_ios)
+- [/02_cisco_ios](https://github.com/techienaut/ansible/tree/master/02_cisco_ios)
   - Cisco lab in GNS3, that Ansible can administrate from an Ubuntu VM server.
