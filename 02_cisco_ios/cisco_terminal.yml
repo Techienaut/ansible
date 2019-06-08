@@ -1,0 +1,49 @@
+- name: cisco_terminal
+  hosts: all
+  tasks:
+    - name: Add apt repositories
+      apt_repository:
+        repo: ppa:ansible/ansible
+        state: present
+      become: true
+    - name: Install packages
+      apt: 
+        name:
+          - software-properties-common
+          - python2.7
+          - python-pip
+          - ansible
+        state: present
+        update_cache: yes
+        install_recommends: yes
+        force_apt_get: yes
+      become: true
+    - name: 2nd Adapter IP Address
+      become: true
+      shell: | 
+        ifconfig enp0s8 10.0.0.3 netmask 255.255.255.0
+        exit 0
+    - name: Add vagrant to vboxsf group
+      become: true
+      user:
+        name: vagrant
+        groups: vboxsf
+        append: yes
+    - name: SSH Config + Diffie-Hellman
+      lineinfile:
+        create: yes
+        path: ~/.ssh/config
+        line: "KexAlgorithms +diffie-hellman-group1-sha1"
+    - name: SSH Config + Cipher AES256
+      lineinfile:
+        path: ~/.ssh/config
+        line: "Ciphers +aes256-cbc"
+#    - name: Ansible - Disable Host Key Checking
+#      lineinfile:
+#        create: yes
+#        path: ~/.profile
+#        line: "export ANSIBLE_HOST_KEY_CHECKING=false"
+#    - name: Ansible - reload .profile
+#      shell: |
+#        source ~/.profile
+#        exit 0

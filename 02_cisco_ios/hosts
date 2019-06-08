@@ -1,0 +1,1 @@
+myrtr.geek.com ansible_host=10.0.0.1  ansible_connection=network_cli  ansible_network_os=ios  ansible_user=vagrant  ansible_password=vagrant

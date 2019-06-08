@@ -1,0 +1,16 @@
+#ansible all -c network_cli -m ios_command -a "commands='show version'" --extra-vars="ansible_network_os=ios ansible_user=vagrant ansible_password=vagrant"
+#ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i hosts R1.yml
+- name: R1
+  hosts: myrtr.geek.com
+#  environment:
+#    ANSIBLE_HOST_KEY_CHECKING: false
+#  vars:
+#    - ansible_connection: network_cli
+#    - ansible_network_os: ios
+#    - ansible_user: vagrant
+#    - ansible_password: vagrant
+  tasks:
+    - name: show version
+      ios_command:
+        commands:
+          - show version
